@@ -8,7 +8,7 @@ public class Bird extends ObjetoGrafico implements Mover {
     Pantalla p = new Pantalla(8, 7);
 
     public Bird(int ejeX, int ejeY, char bird) {
-        
+
         setX(ejeX);
         setY(ejeY);
         setSimbolo(bird);
@@ -30,7 +30,7 @@ public class Bird extends ObjetoGrafico implements Mover {
 
         @Override
         public void mover(ObjetoGrafico ob) {
-
+            p.borrarCelda(ob.getX(), ob.getY());
             p.mPantalla[ob.getX()][ob.getY() - 1] = getSimbolo();
 
         }
