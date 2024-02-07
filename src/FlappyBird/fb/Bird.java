@@ -16,8 +16,10 @@ public class Bird extends ObjetoGrafico implements Mover {
 
     @Override
     public void mover(ObjetoGrafico ob) {
+
         p.borrarCelda(ob.getX(), ob.getY());
-        p.mPantalla[ob.getX() - 1][ob.getY()] = getSimbolo();
+        Pantalla.mPantalla[ob.getX() - 1][ob.getY()] = getSimbolo();
+        setX(getX()-1);
     }
 
     public class Obstacle extends ObjetoGrafico implements Mover {
