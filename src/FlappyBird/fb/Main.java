@@ -9,7 +9,7 @@ public class Main {
         pantalla.rellenarPantalla();
         pantalla.agregarCelda(b);
         pantalla.imprimirPantalla();
-       
+       System.out.println("hola");
     }
 
 }
