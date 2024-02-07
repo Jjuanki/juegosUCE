@@ -3,9 +3,7 @@ package FlappyBird.fb;
 import FlappyBird.util.ObjetoGrafico;
 
 public class Pantalla {
-    private static int ancho;
-    private static int alto;
-    private static char elementoPantalla;
+
     static char[][] mPantalla;
 
     public Pantalla(int ancho, int alto) {
