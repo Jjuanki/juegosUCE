@@ -1,7 +1,5 @@
 package juegosProgra.flappyBird.fb;
 
-import java.util.Random;
-
 import juegosProgra.flappyBird.util.ObjetoGrafico;
 public class Jugar {
 
