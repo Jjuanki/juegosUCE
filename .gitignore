@@ -1,0 +1,29 @@
+# Archivos de compilación y empaquetado
+*.class
+*.jar
+*.war
+*.ear
+
+# Directorio de compilación
+/target/
+
+# Archivos y directorios de IDE específicos (por ejemplo, Eclipse, IntelliJ, NetBeans)
+/.idea/
+*.iml
+*.iws
+*.ipr
+.classpath
+.project
+.settings/
+
+# Archivos de registro
+*.log
+
+# Archivos temporales
+*~
+*.swp
+*.swo
+
+# Directorios del sistema
+.DS_Store
+Thumbs.db
