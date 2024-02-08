@@ -1,7 +1,7 @@
-package FlappyBird.fb;
+package juegosProgra.FlappyBird.fb;
 
-import FlappyBird.util.Mover;
-import FlappyBird.util.ObjetoGrafico;
+import juegosProgra.FlappyBird.util.Mover;
+import juegosProgra.FlappyBird.util.ObjetoGrafico;
 
 public class Bird extends ObjetoGrafico implements Mover {
 

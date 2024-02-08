@@ -1,7 +1,8 @@
-package FlappyBird.fb;
+package juegosProgra.FlappyBird.fb;
 
 import java.util.Random;
-import FlappyBird.util.ObjetoGrafico;
+
+import juegosProgra.FlappyBird.util.ObjetoGrafico;
 public class Jugar {
 
     public void validarMovimiento(ObjetoGrafico bird, ObjetoGrafico obstacle) {

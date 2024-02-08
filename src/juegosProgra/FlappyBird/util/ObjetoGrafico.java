@@ -1,4 +1,4 @@
-package FlappyBird.util;
+package juegosProgra.FlappyBird.util;
 
 public class ObjetoGrafico {
 

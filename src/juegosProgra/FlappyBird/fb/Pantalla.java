@@ -1,6 +1,6 @@
-package FlappyBird.fb;
+package juegosProgra.FlappyBird.fb;
 
-import FlappyBird.util.ObjetoGrafico;
+import juegosProgra.FlappyBird.util.ObjetoGrafico;
 
 public class Pantalla {
 
