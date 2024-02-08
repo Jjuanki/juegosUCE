@@ -1,4 +1,4 @@
-package juegosProgra.FlappyBird.util;
+package juegosProgra.flappyBird.util;
 
 public interface Mover {
     

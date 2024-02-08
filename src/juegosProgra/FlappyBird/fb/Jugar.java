@@ -1,4 +1,4 @@
-package juegosProgra.FlappyBird.fb;
+package juegosProgra.flappyBird.fb;
 
 import java.util.Random;
 
