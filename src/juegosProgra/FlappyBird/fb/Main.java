@@ -5,7 +5,6 @@ public class Main {
         Pantalla pantalla = new Pantalla(8, 7);
         Bird b = new Bird(3, 1, '@');
         Bird.Obstacle o = b.new Obstacle('*', 7, 0);
-        Jugar jugar = new Jugar();
 
         pantalla.rellenarPantalla();
         pantalla.agregarCelda(b);
