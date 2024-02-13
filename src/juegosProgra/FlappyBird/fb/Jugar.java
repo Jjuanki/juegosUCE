@@ -6,7 +6,7 @@ import java.util.TimerTask;
 public class Jugar extends Timer {
 
     Scanner sc = new Scanner(System.in);
-    Pantalla pantalla = new Pantalla(8, 7);
+    Pantalla pantalla = new Pantalla(10, 9);
     Bird b = new Bird(3, 1, '@');
     Bird.Obstacle o = b.new Obstacle('*', 0, 7);
     Bird.Obstacle o2 = b.new Obstacle('*', 1, 7);
@@ -15,11 +15,16 @@ public class Jugar extends Timer {
 
     public void juego() {
 
+
+        int[][] arr = new int[8][7];
+
+        System.out.println(arr.length);
+
        
         scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                if (!b.colision()) {
+                if (!b.colision() || !b.validarMovimiento()) {
                     b.caida();
                     o.mover();
                     o2.mover();

@@ -5,7 +5,7 @@ import juegosProgra.flappyBird.util.ObjetoGrafico;
 
 public class Bird extends ObjetoGrafico implements Mover {
 
-    Pantalla p = new Pantalla(8, 7);
+    Pantalla p = new Pantalla(10, 9);
     public Bird(int ejeX, int ejeY, char bird) {
         setX(ejeX);
         setY(ejeY);
@@ -27,11 +27,15 @@ public class Bird extends ObjetoGrafico implements Mover {
 
     public boolean colision() {
         if (Pantalla.mPantalla[getX()][getY()] == '*') {
-
+            
             return true;
         }else{
             return false;
         }
+    }
+    @Override
+    public boolean validarMovimiento() {
+    
     }
     public class Obstacle extends ObjetoGrafico implements Mover {
 
@@ -48,6 +52,11 @@ public class Bird extends ObjetoGrafico implements Mover {
             Pantalla.mPantalla[getX()][getY()-1] = getSimbolo();
             setY(getY() - 1);
 
+        }
+
+        @Override
+        public boolean validarMovimiento() {
+            
         }
 
     }

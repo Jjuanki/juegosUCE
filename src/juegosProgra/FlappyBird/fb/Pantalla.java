@@ -13,11 +13,17 @@ public class Pantalla {
     public void rellenarPantalla() {
         for (int i = 0; i < mPantalla.length; i++) {
             for (int j = 0; j < mPantalla[i].length; j++) {
-                mPantalla[i][j] = '.';
+                if (i == mPantalla.length-1 || i == 0|| j == 0)  {
+                    mPantalla[i][j] = '#';
+                } else{
+                    
+                    mPantalla[i][j] = '.';
+                }
             }
         }
 
     }
+
 
     public void imprimirPantalla() {
         System.out.println("--------");
