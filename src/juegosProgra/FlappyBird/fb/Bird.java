@@ -19,7 +19,20 @@ public class Bird extends ObjetoGrafico implements Mover {
         Pantalla.mPantalla[getX() - 1][getY()] = getSimbolo();
         setX(getX() - 1);
     }
+    public void caida() {
+        p.borrarCelda(getX(), getY());
+        Pantalla.mPantalla[getX()+1][getY()] = getSimbolo();
+        setX(getX()+1);
+    }
 
+    public boolean colision() {
+        if (Pantalla.mPantalla[getX()][getY()] == '*') {
+
+            return true;
+        }else{
+            return false;
+        }
+    }
     public class Obstacle extends ObjetoGrafico implements Mover {
 
         public Obstacle(char obstacle, int ejeX, int ejeY) {
@@ -35,10 +48,6 @@ public class Bird extends ObjetoGrafico implements Mover {
             Pantalla.mPantalla[getX()][getY()-1] = getSimbolo();
             setY(getY() - 1);
 
-        }
-
-        public void caida(ObjetoGrafico ob) {
-            p.borrarCelda(getX(), getY());
         }
 
     }

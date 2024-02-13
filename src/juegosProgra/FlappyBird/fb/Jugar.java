@@ -1,42 +1,47 @@
 package juegosProgra.flappyBird.fb;
+
+import java.util.Date;
+import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import juegosProgra.flappyBird.util.ObjetoGrafico;
-public class Jugar {
+public class Jugar extends Timer {
 
-    public void validarMovimiento(ObjetoGrafico bird, ObjetoGrafico obstacle) {
-        if (Pantalla.mPantalla[bird.getX()][bird.getY()] == obstacle.getSimbolo()) {
+    Scanner sc = new Scanner(System.in);
+    Pantalla pantalla = new Pantalla(8, 7);
+    Bird b = new Bird(3, 1, '@');
+    Bird.Obstacle o = b.new Obstacle('*', 0, 7);
+    Bird.Obstacle o2 = b.new Obstacle('*', 1, 7);
+    Bird.Obstacle o3 = b.new Obstacle('*', 2, 7);
 
-            System.out.println("Has muerto");
 
-        }
-    }
+    public void juego() {
 
-    public void jugar(){
-
-        Timer timer = new Timer();
-        TimerTask tarea = new TimerTask() {
-
+       
+        scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-               
+                if (!b.colision()) {
+                    b.caida();
+                    o.mover();
+                    o2.mover();
+                    o3.mover();
+                    pantalla.imprimirPantalla();
+                } else {
+                    System.out.println("has muerto");
+                    cancel(); 
+                }
             }
-            
-        };
-
-        Jugar j = new Jugar();
-        Pantalla pantalla = new Pantalla(8, 7);
-        Bird b = new Bird(3,1, '@');
-        Bird.Obstacle o = b.new Obstacle('*', 7,0);
-        Bird.Obstacle o2 = b.new Obstacle('*', 7,1);
-        Bird.Obstacle o3 = b.new Obstacle('*', 7,2);
-        pantalla.rellenarPantalla();
-        pantalla.agregarCelda(b);
-        pantalla.agregarCelda(o);
-        pantalla.agregarCelda(o2);
-        pantalla.agregarCelda(o3);
-        pantalla.imprimirPantalla();
+        }, 0, 2000);
+    
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            String inp = sc.nextLine();
+            if (inp.equals("")) {
+                b.mover();
+                b.mover();
+            }
+        }
     }
 
 }
