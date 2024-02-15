@@ -27,7 +27,7 @@ public class Bird extends ObjetoGrafico implements Mover {
         Pantalla.mPantalla[getX() + 1][getY()] = getSimbolo();
         setX(getX() + 1);
     }
-
+    
     public boolean colision() {
         if (Pantalla.mPantalla[getX()][getY()] == '*') {
 
@@ -35,19 +35,6 @@ public class Bird extends ObjetoGrafico implements Mover {
         } else {
             return false;
         }
-    }
-
-    @Override
-    public boolean validarMovimiento() {
-
-        if (Pantalla.mPantalla[getX()][getY()] == '#') {
-
-            return false;
-        } else {
-            return true;
-
-        }
-
     }
 
     @Override
@@ -70,16 +57,6 @@ public class Bird extends ObjetoGrafico implements Mover {
             Pantalla.mPantalla[getX()][getY() - 1] = getSimbolo();
             setY(getY() - 1);
 
-        }
-
-        @Override
-        public boolean validarMovimiento() {
-            if (Pantalla.mPantalla[getX()][getY()] == '#') {
-
-                return false;
-            } else {
-                return true;
-            }
         }
 
         public void replaceBordes() {

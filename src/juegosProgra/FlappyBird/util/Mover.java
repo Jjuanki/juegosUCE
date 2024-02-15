@@ -1,9 +1,18 @@
 package juegosProgra.flappyBird.util;
 
-public interface Mover {
+import juegosProgra.flappyBird.fb.Pantalla;
+
+public interface Mover  {
     
      void mover();
-     boolean validarMovimiento();
+     default boolean validarMovimiento(ObjetoGrafico ob){
+          if (Pantalla.mPantalla[ob.getX()][ob.getY()] == '#') {
+
+                return true;
+            } else {
+                return false;
+            }
+     }
      public void reset();
 
 }

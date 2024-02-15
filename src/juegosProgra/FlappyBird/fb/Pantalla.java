@@ -4,9 +4,9 @@ import juegosProgra.flappyBird.util.ObjetoGrafico;
 
 public class Pantalla {
 
-    static char[][] mPantalla;
+    public static char[][] mPantalla;
 
-    public Pantalla(int ancho, int alto) {
+        public Pantalla(int ancho, int alto) {
         mPantalla = new char[alto][ancho];
     }
 
