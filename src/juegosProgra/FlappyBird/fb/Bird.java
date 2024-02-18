@@ -15,6 +15,16 @@ public class Bird extends ObjetoGrafico implements Mover {
     }
 
     @Override
+    public boolean validarMovimiento() {
+        if (getX() == Pantalla.mPantalla.length-1 || getX() == 0|| getY() == 0)  {
+            return true;
+        } else{
+            
+            return false;
+        }
+    }
+
+    @Override
     public void mover() {
 
         p.borrarCelda(getX(), getY());
@@ -27,7 +37,7 @@ public class Bird extends ObjetoGrafico implements Mover {
         Pantalla.mPantalla[getX() + 1][getY()] = getSimbolo();
         setX(getX() + 1);
     }
-    
+
     public boolean colision() {
         if (Pantalla.mPantalla[getX()][getY()] == '*') {
 
@@ -69,5 +79,16 @@ public class Bird extends ObjetoGrafico implements Mover {
             setY(getY());
         }
 
+        @Override
+        public boolean validarMovimiento() {
+            if (getY() == 0)  {
+                return true;
+            } else{
+                
+                return false;
+            }
+        }
+
     }
+
 }
