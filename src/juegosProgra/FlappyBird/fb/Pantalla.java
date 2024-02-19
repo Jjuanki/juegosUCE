@@ -26,14 +26,14 @@ public class Pantalla {
 
 
     public void imprimirPantalla() {
-        System.out.println("--------");
+        System.out.println("--------------");
         for (int i = 0; i < mPantalla.length; i++) {
             for (int j = 0; j < mPantalla[i].length; j++) {
                 System.out.print(mPantalla[i][j]);
             }
             System.out.println();
         }
-        System.out.println("--------");
+        System.out.println("--------------");
 
     }
 
