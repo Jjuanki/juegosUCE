@@ -25,16 +25,13 @@ public class Jugar extends Timer {
             public void run() {
                 if (!b.colision() && !b.validarMovimiento()) {
                     b.caida();
-                    if (!o.validarMovimiento()) {
+        
                         
-                        o.mover();
-                        o2.mover();
-                        o3.mover();
-                        pantalla.imprimirPantalla();
-                    }else{
-                        System.out.println("Fin de los obstáculos");
-                        cancel();
-                    }
+                    o.mover();
+                    o2.mover();
+                    o3.mover();
+                    pantalla.imprimirPantalla();
+                    
 
                 } else {
                     System.out.println("has muerto");
@@ -50,6 +47,7 @@ public class Jugar extends Timer {
                 b.mover();
                 b.mover();
             }
+            
 
         }
     }
