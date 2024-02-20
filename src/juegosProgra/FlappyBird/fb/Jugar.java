@@ -12,6 +12,9 @@ public class Jugar extends Timer {
     Bird.Obstacle o = b.new Obstacle('*', 1, 9);
     Bird.Obstacle o2 = b.new Obstacle('*', 2, 9);
     Bird.Obstacle o3 = b.new Obstacle('*', 3, 9);
+    Bird.Obstacle o4 = b.new Obstacle('*', 5, 2);
+    Bird.Obstacle o5 = b.new Obstacle('*', 6, 2);
+    Bird.Obstacle o6 = b.new Obstacle('*', 7, 2);
 
     public void juego() {
         pantalla.rellenarPantalla();
@@ -19,19 +22,23 @@ public class Jugar extends Timer {
         pantalla.agregarCelda(o);
         pantalla.agregarCelda(o2);
         pantalla.agregarCelda(o3);
+        pantalla.agregarCelda(o4);
+        pantalla.agregarCelda(o5);
+        pantalla.agregarCelda(o6);
 
         scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 if (!b.colision() && !b.validarMovimiento()) {
                     b.caida();
-        
-                        
+
                     o.mover();
                     o2.mover();
                     o3.mover();
+                    o4.mover();
+                    o5.mover();
+                    o6.mover();
                     pantalla.imprimirPantalla();
-                    
 
                 } else {
                     System.out.println("has muerto");
@@ -47,7 +54,6 @@ public class Jugar extends Timer {
                 b.mover();
                 b.mover();
             }
-            
 
         }
     }

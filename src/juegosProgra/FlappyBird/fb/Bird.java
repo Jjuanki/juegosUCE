@@ -63,9 +63,10 @@ public class Bird extends ObjetoGrafico implements Mover {
             // Verificar si el obstáculo alcanzó el límite izquierdo
             if (getY() - 1 < 0) {
                 // Si sí, reiniciar desde la derecha
-                setY(Pantalla.mPantalla.length - 1); // ajusta "anchuraDeLaPantalla" según tu implementación
+                setY(Pantalla.mPantalla.length - 1); 
+                Pantalla.mPantalla[getX()][0] = '#';
             } else {
-                // Si no, mover el obstáculo hacia arriba como lo haces actualmente
+                // Si no, mover el obstáculo hacia arriba como se hace actualmente
                 p.borrarCelda(getX(), getY());
                 Pantalla.mPantalla[getX()][getY() - 1] = getSimbolo();
                 setY(getY() - 1);
