@@ -46,37 +46,37 @@ public class Bird extends ObjetoGrafico implements Mover {
         }
     }
 
-    @Override
-    public void reset() {
-
-    }
-
+    
+    
     public class Obstacle extends ObjetoGrafico implements Mover {
-
+        
+        Bird b = new Bird(4, 2, '@');
         public Obstacle(char obstacle, int ejeX, int ejeY) {
             setX(ejeX);
             setY(ejeY);
             setSimbolo(obstacle);
         }
-
+        
         @Override
         public void mover() {
-
-            p.borrarCelda(getX(), getY());
-            Pantalla.mPantalla[getX()][getY() - 1] = getSimbolo();
-            setY(getY() - 1);
-
+            // Verificar si el obstáculo alcanzó el límite izquierdo
+            if (getY() - 1 < 0) {
+                // Si sí, reiniciar desde la derecha
+                setY(Pantalla.mPantalla.length - 1); 
+                Pantalla.mPantalla[getX()][0] = '#';
+            } else {
+                // Si no, mover el obstáculo hacia arriba como se hace actualmente
+                p.borrarCelda(getX(), getY());
+                Pantalla.mPantalla[getX()][getY() - 1] = getSimbolo();
+                setY(getY() - 1);
+            }
         }
 
         public void replaceBordes() {
             Pantalla.mPantalla[getX()][getY()] = '#';
         }
 
-        @Override
-        public void reset() {
-            setX(getX());
-            setY(getY());
-        }
+        
 
         @Override
         public boolean validarMovimiento() {
