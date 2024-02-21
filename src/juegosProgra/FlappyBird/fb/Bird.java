@@ -1,14 +1,13 @@
-package juegosProgra.flappyBird.fb;
+package juegosProgra.FlappyBird.fb;
 
-import juegosProgra.flappyBird.util.Mover;
-import juegosProgra.flappyBird.util.ObjetoGrafico;
+import juegosProgra.FlappyBird.util.Mover;
+import juegosProgra.FlappyBird.util.ObjetoGrafico;
 
 public class Bird extends ObjetoGrafico implements Mover {
 
     Pantalla p = new Pantalla(10, 9);
 
     public Bird(int ejeX, int ejeY, char bird) {
-
         setX(ejeX);
         setY(ejeY);
         setSimbolo(bird);

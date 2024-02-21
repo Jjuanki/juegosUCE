@@ -1,4 +1,4 @@
-package juegosProgra.flappyBird.fb;
+package juegosProgra.FlappyBird.fb;
 
 public class Main {
 
