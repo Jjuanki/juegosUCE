@@ -14,7 +14,7 @@ public class JuegoPares {
 	int cuadrados;
 	int intentos;
 	Simbolos simb;
-	
+	static char[] caracteres;
 	public JuegoPares(int num) {
 		sc= new Scanner(System.in);
 		simb= new Simbolos();
@@ -22,10 +22,15 @@ public class JuegoPares {
 		rand=new Random();
 		posiciones = new char[num];
 		reversos = new char[num];
+		caracteres = new char[num];
 		iniciarPosiciones();
-		intentos=num/4;
+		intentos=num/2;
 	}
-	
+	private void iniciaCaracteres(){
+		for (int i = 0; i < caracteres.length; i++) {
+			caracteres[i]= Simbolos.simbolos[i];
+		}
+	}
 	private void iniciarPosiciones() {
 		char aux1= 49;
 		char aux2=65;
@@ -37,7 +42,7 @@ public class JuegoPares {
 			}	
 		}
 	}
-	
+
 	private void lineaSuperior(int x) {
 		for (int i = 0; i < x; i++) {
 			print(1, "╔");
@@ -53,7 +58,7 @@ public class JuegoPares {
 			if (aux > 8) {
 				print(1, "║");
 				if(posiciones[aux]>1000) {
-					System.out.print(""+ Colores.celeste + posiciones[aux]+ Colores.b + " ");
+					System.out.print(""+ Colores.verde + posiciones[aux]+ Colores.b + " ");
 				}
 				else {
 					System.out.print(" "+ Colores.celeste + posiciones[aux] + Colores.b + " ");
@@ -64,7 +69,7 @@ public class JuegoPares {
 			} else {
 				print(1, "║");
 				if(posiciones[aux]>1000) {
-					System.out.print(" "+ Colores.celeste + posiciones[aux]+ Colores.b + " ");
+					System.out.print(" "+ Colores.verde + posiciones[aux]+ Colores.b + " ");
 				}else {
 					System.out.print(" "+ Colores.celeste + posiciones[aux] + Colores.b + " ");
 				}
@@ -86,7 +91,7 @@ public class JuegoPares {
 		}
 		System.out.println();
 	}
-	
+
 	private void print(int n, String txt) {
 		for (int i = 0; i < n; i++) {
 			System.out.print(txt);
@@ -131,7 +136,6 @@ public class JuegoPares {
 
 	private boolean validar(String a, String b) {
 		return (posiciones[(obtenerPosicion(a.charAt(0)))]==posiciones[(obtenerPosicion(b.charAt(0)))]);
-
 	}
 
 	private void inicializarReverso(){
@@ -139,29 +143,32 @@ public class JuegoPares {
 			reversos[i]=posiciones[i];
 		}
 	}
-	public void jugar() {
 
+	public void jugar() {
 		inicializarReverso();
 		boolean continuar = true;
 		System.out.println("Encuentra los pares de cartas!");
+
 		do {
 			dibujar();
 			System.out.println("Elige una carta para voltear>>");
-			String txt= sc.next();
+			String txt=(sc.next()).toUpperCase();
 			reemplazar(txt.charAt(0),Simbolos.simbolos);
 			dibujar();
 			System.out.println("Elige una carta para voltear>>");
-			String txt1= sc.next();
+			String txt1= (sc.next()).toUpperCase();
 			reemplazar(txt1.charAt(0),Simbolos.simbolos);
 			dibujar();
 			if(validar(txt,txt1)) {
 				inicializarReverso();
+				System.out.println("Correcto");
 				continue;
 			}else {
 				System.out.println("Incorrecto, -1 intento");
 				restaurarReversos();
 				--intentos;
 			}
+
 			if(intentos==0) {
 				System.out.println("Perdiste");
 				continuar=false;
@@ -173,30 +180,33 @@ public class JuegoPares {
 		
 		public static char[] simbolos;
 		 public Simbolos() {
-		        simbolos = new char[22];
+		        simbolos = new char[16];
 		        simbolos[0] = '\u2600';
-		        simbolos[1] = '\u2603';
-		        simbolos[2] = '\u260f';
-		        simbolos[3] = '\u26f5';
-		        simbolos[4] = '\u2629';
-		        simbolos[5] = '\u2668';
-		        simbolos[6] = '\u2600';
-		        simbolos[7] = '\u2615';
-		        simbolos[8] = '\u262f';
-		        simbolos[9] = '\u262a';
-		        simbolos[10] = '\u26bd';
-		        //copias
-		        simbolos[11] = '\u2600';
-		        simbolos[12] = '\u2603';
-		        simbolos[13] = '\u260f';
-		        simbolos[14] = '\u26f5';
-		        simbolos[15] = '\u2605';
-		        simbolos[16] = '\u2668';
-		        simbolos[17] = '\u2614';
-		        simbolos[18] = '\u2615';
-		        simbolos[19] = '\u262f';
-		        simbolos[20] = '\u262a';
-		        simbolos[21] = '\u26bd';
+		        simbolos[1] = '\u2601';
+		        simbolos[2] = '\u2602';
+		        simbolos[3] = '\u2603';
+		        simbolos[4] = '\u2604';
+		        simbolos[5] = '\u2640';
+		        simbolos[6] = '\u2641';
+				simbolos[7] = '\u2642';
+
+				simbolos[8] = '\u2600';
+				simbolos[9] = '\u2601';
+				simbolos[10] = '\u2602';
+				simbolos[11] = '\u2603';
+				simbolos[12] = '\u2604';
+				simbolos[13] = '\u2640';
+				simbolos[14] = '\u2641';
+				simbolos[15] = '\u2642';
+		       /* simbolos[8] = '\u2643';
+		        simbolos[9] = '\u2644';
+		        simbolos[10] = '\u2645';
+			 	simbolos[11] = '\u2646';
+			 	simbolos[12] = '\u2647';
+			 	simbolos[13] = '\u2648';
+			 	simbolos[14] = '\u2649';
+			 	simbolos[15] = '\u2649'; */
+
 		    }
 		
 	}
