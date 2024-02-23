@@ -23,8 +23,8 @@ public class Menu{
         System.out.println("3: Dificil");
         
         int opcion;
+        System.out.print("Escoge la dificultad: ");
         do {
-            System.out.print("Escoge la dificultad: ");
             opcion = scanner.nextInt();
         } while (opcion < 1 || opcion > 3);
         
@@ -52,12 +52,18 @@ public class Menu{
 
     private void jugar(Laberinto lab){
         Scanner scanner = new Scanner(System.in);
+        String op1;
         char op;
         boolean flag = true;
         do {
             lab.imprimirLaberinto();
             System.out.print("Ingrese la dirección (w/a/s/d) o q para salir: ");
-            op = scanner.nextLine().charAt(0);
+            
+            do {
+                op1 = scanner.next();
+            } while (op1.length() < 0);
+
+            op = op1.charAt(0);
             if (op != 'q') {
                 if (lab.moverJugador(op)) {
                     flag = false;

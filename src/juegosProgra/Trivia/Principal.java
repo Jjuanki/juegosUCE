@@ -1,6 +1,10 @@
 package juegosProgra.Trivia;
+
+import juegosProgra.Trivia.Preguntas.*;
+
 public class Principal  {
     public static void main(String []args){
-        
+        Menu menu = new Menu();
+        menu.menu();
     }
 }
