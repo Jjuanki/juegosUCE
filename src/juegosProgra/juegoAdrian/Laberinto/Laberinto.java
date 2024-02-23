@@ -1,4 +1,5 @@
 package juegosProgra.juegoAdrian.Laberinto;
+
 import java.util.Random;
 
 public class Laberinto {
