@@ -1,7 +1,7 @@
-package juegosProgra.FlappyBird.fb;
+package juegosProgra.flappyBird.fb;
 
-import juegosProgra.FlappyBird.util.Mover;
-import juegosProgra.FlappyBird.util.ObjetoGrafico;
+import juegosProgra.flappyBird.util.Mover;
+import juegosProgra.flappyBird.util.ObjetoGrafico;
 
 public class Bird extends ObjetoGrafico implements Mover {
 
@@ -59,13 +59,13 @@ public class Bird extends ObjetoGrafico implements Mover {
         
         @Override
         public void mover() {
-            // Verificar si el obstáculo alcanzó el límite izquierdo
+            // Verifica si el obstáculo llegó a la iz
             if (getY() - 1 < 0) {
                 // Si sí, reiniciar desde la derecha
                 setY(Pantalla.mPantalla.length - 1); 
                 Pantalla.mPantalla[getX()][0] = '#';
             } else {
-                // Si no, mover el obstáculo hacia arriba como se hace actualmente
+                // Si no, se mueve normal 
                 p.borrarCelda(getX(), getY());
                 Pantalla.mPantalla[getX()][getY() - 1] = getSimbolo();
                 setY(getY() - 1);
