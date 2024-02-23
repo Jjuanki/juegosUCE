@@ -176,7 +176,7 @@ public class JuegoPares {
 		}while(continuar);
 	
 	}
-	public class Simbolos{
+	public record Simbolos(){
 		
 		public static char[] simbolos;
 		 public Simbolos() {
