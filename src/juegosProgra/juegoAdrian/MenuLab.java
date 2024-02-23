@@ -5,7 +5,7 @@ import java.util.Scanner;
 import juegosProgra.juegoAdrian.Laberinto.Jugador;
 import juegosProgra.juegoAdrian.Laberinto.Laberinto;
 
-public class Menu{
+public class MenuLab{
     // public Jugador[] list;
 
     public void menu(){
