@@ -1,4 +1,4 @@
-package Juego;
+package juegosProgra.cartaSucia.Juego;
 
 import java.util.TimerTask;
 import java.util.Random;

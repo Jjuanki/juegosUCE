@@ -1,4 +1,4 @@
-package Juego;
+package juegosProgra.cartaSucia.Juego;
 
 public class Carta {
 
